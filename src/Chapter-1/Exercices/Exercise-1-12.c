@@ -1,28 +1,27 @@
 /*
  ============================================================================
- Name        : 1.5.1-FileCopying-1.c
+ Name        : Exercise-1-12.c
  Author      : Daniel Marchena Parreira
  Email       : danielmapar@gmail.com
- Date        : 14/11/2013
+ Date        : 04/12/2013
  Version     : 0.1
  Copyright   : GNU General Public License Version 2
- Description : The simplest example is a program that
-			   copies its input to its outptut one character at a time.
+ Description : Write a program that prints its input one word per line.
  ============================================================================
  */
 
 #include <stdio.h>
 
-/* copy input to output; 1st version */
 int main(void)
 {
 	int c;
 
-	c = getchar();
-	while(c != EOF)
+	while((c = getchar()) != EOF)
 	{
-		putchar(c);
-		c = getchar();
+		if(c == ' ' || c == '\n' || c == '\t' ||  c == '\\')
+			printf("\n");
+		else
+			putchar(c);
 	}
 
 	return 0;

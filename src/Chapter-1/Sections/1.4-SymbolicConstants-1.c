@@ -17,6 +17,7 @@
 #define LOWER 0   /* lower limit of table */
 #define UPPER 300 /* upper limit */
 #define STEP  20  /* step size */
+#define OUTPUT_TEXT "Output:\n"
 
 /* print Fahrenheit-Celsius table */
 int main(void)

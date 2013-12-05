@@ -1,29 +1,28 @@
 /*
  ============================================================================
- Name        : 1.5.1-FileCopying-1.c
+ Name        : ASCIITable.c
  Author      : Daniel Marchena Parreira
  Email       : danielmapar@gmail.com
- Date        : 14/11/2013
+ Date        : 02/11/2013
  Version     : 0.1
  Copyright   : GNU General Public License Version 2
- Description : The simplest example is a program that
-			   copies its input to its outptut one character at a time.
+ Description : Generates ASCII table
  ============================================================================
  */
 
 #include <stdio.h>
+#define LIMIT 255
 
-/* copy input to output; 1st version */
 int main(void)
 {
-	int c;
 
-	c = getchar();
-	while(c != EOF)
-	{
-		putchar(c);
-		c = getchar();
-	}
+	int counter = 0;
+
+	printf("decimal\thexadecimal\toctal\tchar\n");
+
+	do
+		printf("%d\t%x\t\t%o\t%c\n", counter,counter,counter,counter);
+	while(counter++ < LIMIT);
 
 	return 0;
 }

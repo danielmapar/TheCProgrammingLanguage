@@ -1,29 +1,28 @@
 /*
  ============================================================================
- Name        : 1.5.1-FileCopying-1.c
+ Name        : 1.6-Exercise.c
  Author      : Daniel Marchena Parreira
  Email       : danielmapar@gmail.com
- Date        : 14/11/2013
+ Date        : 02/12/2013
  Version     : 0.1
  Copyright   : GNU General Public License Version 2
- Description : The simplest example is a program that
-			   copies its input to its outptut one character at a time.
+ Description : Verify that the expression getchar() != EOF is 0 or 1.
  ============================================================================
  */
 
 #include <stdio.h>
 
-/* copy input to output; 1st version */
 int main(void)
 {
 	int c;
 
-	c = getchar();
-	while(c != EOF)
+	/* True = 1 and False = 0 */
+	while((c = (getchar() != EOF)) != 0)
 	{
-		putchar(c);
-		c = getchar();
+		printf("%d", c);
 	}
+
+	printf("%d", c);
 
 	return 0;
 }
