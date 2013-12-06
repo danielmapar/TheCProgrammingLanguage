@@ -22,7 +22,6 @@ int main(void)
 {
 	int line_size = 0;
 	char sentence[MAX_LINE_SIZE];
-	start_vet(sentence, MAX_LINE_SIZE);
 
 	while((line_size = line_length(sentence, MAX_LINE_SIZE)) > 0)
 		if(line_size > MINIMUM_LINE_SIZE)
@@ -34,6 +33,9 @@ int main(void)
 int line_length(char sentence[], int max_size)
 {
 	int c, i, length = 0;
+
+	/* Start vector with blanks */
+	start_vet(sentence, max_size);
 
 	for(i = 0; i < (max_size-1) && (c = getchar()) != EOF && c != '\n'; ++i)
 	{
