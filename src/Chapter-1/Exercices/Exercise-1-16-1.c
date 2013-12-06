@@ -21,23 +21,39 @@ void copy(char to[], char from[]);
 /* print the longest input line */
 int main(void)
 {
-	int len;               /* current line length */
-	int max;               /* maximum length seen so far */
-	char line[MAXLINE];    /* current line saved here */
-	char longest[MAXLINE]; /* longest line saved here */
+	int len;                    /* first line length */
+	int len_tmp;                /* other lines temporarily length */
+	int max_len;                /* maximum length seen so far */
+	char first_line[MAXLINE];   /* first line saved here */
+	char line_tmp[MAXLINE];     /* other lines temporarily saved here */
+	char longest_line[MAXLINE]; /* longest line saved here */
+	char end_line;              /* flag to determine end of line */
 
-	max = 0;
-	while ((len = getline_new(line, MAXLINE)) > 0)
-		/* A sentence to big for the vector */
-		if(len > max)
+	max_len = 0;
+	end_line = ' ';
+	while ((len = getline_new(first_line, MAXLINE)) > 0)
+	{
+		if (len == (MAXLINE-1))
+			while (end_line == ' ' && (len_tmp = getline_new(line_tmp, MAXLINE)) > 0)
+			{
+				len += len_tmp;
+				if(len_tmp < (MAXLINE-1))
+					end_line = 'X';
+			}
+		len_tmp = 0;
+		end_line = ' ';
+		if(max_len < len)
 		{
-			max = len;
-			copy(longest, line);
+			max_len = len;
+			copy(longest_line, first_line);
 		}
+	}
 
-	if (max > 0) /* there was a line  */
+	if (max_len > 0) /* there was a line  */
+	{
 		printf("----------------\n");
-		printf("String: %s\nSize: %d\n", longest, max);
+		printf("String: %s\nSize: %d\n", longest_line, max_len);
+	}
 
 	return 0;
 }
@@ -47,12 +63,8 @@ int getline_new(char s[], int lim)
 {
 	int c, i;
 
-	for(i = 0; (c = getchar()) != EOF && c != '\n'; ++i)
-		if(i < lim-1)
-			s[i] = c;
-
-	if(i < lim-1)
-		s[i] = '\n';
+	for(i = 0; i < lim-1 && (c = getchar()) != EOF && c != '\n'; ++i)
+		s[i] = c;
 
 	s[i] = '\0';
 	return i;
@@ -67,4 +79,3 @@ void copy(char to[], char from[])
 	while((to[i] = from[i]) != '\0')
 		++i;
 }
-
