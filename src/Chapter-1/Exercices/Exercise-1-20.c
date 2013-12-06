@@ -10,6 +10,8 @@
                proper number of blanks to space to the next tab stop. Assume
                a fixed set of tab stops, say every n columns. Should n be a
                variable or a symbolic parameter?
+               Help: http://stackoverflow.com/questions/7178201/kr-exercise-1
+                     -20-need-some-clarification
  ============================================================================
  */
 #include <stdio.h>
@@ -54,27 +56,31 @@ int format_line(char vet[], int size, int col, int tab)
 			if(i == 0)
 				return c;
 			else
-			{
 				stop = 'X';
-				--i;
-			}
 		}
 		++j;
+		/* treat tabs */
 		if(c == '\t')
 		{
 			while(j > (col+tab))
 				j = j - (col+tab);
 
 			j = (col+tab) - j;
+			if(j > tab || j == 0)
+				j = tab-1;
 
-			for(;j >= 0; --j)
+			while(j >= 0)
 			{
 				vet[i] = ' ';
 				++i;
+				--j;
 			}
+			--i;
 		}
 		else
+		{
 			vet[i] = c;
+		}
 	}
 
 	if(c != EOF)
