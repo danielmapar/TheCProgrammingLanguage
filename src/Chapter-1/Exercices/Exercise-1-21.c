@@ -1,17 +1,16 @@
 /*
  ============================================================================
- Name        : Exercise-1-20.c
+ Name        : Exercise-1-21.c
  Author      : Daniel Marchena Parreira
  Email       : danielmapar@gmail.com
  Date        : 06/12/2013
  Version     : 0.1
  Copyright   : GNU General Public License Version 2
- Description : Write a program detab that replaces tabs in the input with the
-               proper number of blanks to space to the next tab stop. Assume
-               a fixed set of tab stops, say every n columns. Should n be a
-               variable or a symbolic parameter?
-               Help: http://stackoverflow.com/questions/7178201/kr-exercise-1
-                     -20-need-some-clarification
+ Description : Write a program entab that replaces strings of blanks by the
+               minimum number of tabs and blanks to achieve the same spacing.
+               Use the same tab stops as for detab. When either a tab or a
+               single blank would suffice to reach a tab stop, which should
+               be given preference?
  ============================================================================
  */
 
@@ -30,7 +29,7 @@ int main(void)
 
 	while((c = format_line(vet, MAXSIZE, COL, TAB)) != EOF)
 		if(c != '\n')
-			printf("%s", vet);
+			printf("%s\n", vet);
 	return 0;
 }
 
@@ -59,27 +58,27 @@ int format_line(char vet[], int size, int col, int tab)
 			else
 				stop = 'X';
 		}
-		++j;
-		/* treat tabs */
-		if(c == '\t')
+		/* treat blanks */
+		else if(c == ' ')
 		{
-			while(j > (col+tab))
-				j = j - (col+tab);
-
-			j = (col+tab) - j;
-			if(j > tab || j == 0)
-				j = tab-1;
-
-			while(j >= 0)
-			{
-				vet[i] = ' ';
-				++i;
-				--j;
-			}
+			++j;
 			--i;
 		}
+		/* write tabs and blanks */
 		else
 		{
+			while(j >= tab)
+			{
+				vet[i] = '\t';
+				j = j - tab;
+				++i;
+			}
+			while(j > 0)
+			{
+				vet[i] = ' ';
+				j = j - 1;
+				++i;
+			}
 			vet[i] = c;
 		}
 	}
