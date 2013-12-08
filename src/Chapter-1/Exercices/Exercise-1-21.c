@@ -17,19 +17,18 @@
 #include <stdio.h>
 #define MAXSIZE 100
 #define TAB 4
-#define COL 4
 
 void start_vet(char vet[], int size);
-int format_line(char vet[], int size, int col, int tab);
+int format_line(char vet[], int size, int tab);
 
 int main(void)
 {
 	char vet[MAXSIZE];
 	int c;
 
-	while((c = format_line(vet, MAXSIZE, COL, TAB)) != EOF)
+	while((c = format_line(vet, MAXSIZE, TAB)) != EOF)
 		if(c != '\n')
-			printf("%s\n", vet);
+			printf("%s", vet);
 	return 0;
 }
 
@@ -38,9 +37,10 @@ void start_vet(char vet[], int size)
 	int i;
 	for(i = 0; i < size; ++i)
 		vet[i] = ' ';
+	vet[i] = '\0';
 }
 
-int format_line(char vet[], int size, int col, int tab)
+int format_line(char vet[], int size, int tab)
 {
 	int c, i, j = 0;
 	char stop = ' ';
@@ -59,7 +59,7 @@ int format_line(char vet[], int size, int col, int tab)
 				stop = 'X';
 		}
 		/* treat blanks */
-		else if(c == ' ')
+		if(c == ' ')
 		{
 			++j;
 			--i;

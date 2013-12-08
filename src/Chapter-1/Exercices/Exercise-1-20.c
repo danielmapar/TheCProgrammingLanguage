@@ -39,6 +39,7 @@ void start_vet(char vet[], int size)
 	int i;
 	for(i = 0; i < size; ++i)
 		vet[i] = ' ';
+	vet[i] = '\0';
 }
 
 int format_line(char vet[], int size, int col, int tab)
