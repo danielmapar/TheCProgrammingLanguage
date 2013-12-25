@@ -16,7 +16,7 @@ int strlen2(const char text[]);
 
 int main(void)
 {
-	char text[] = "Text!";
+	char text[] = "Text!"; /* automatically ends with \0 */
 	printf("%d\n", strlen2(text));
 	return 0;
 }
