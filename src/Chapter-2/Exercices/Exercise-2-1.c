@@ -42,7 +42,7 @@ int main(void)
 	printf("|--------|INT|--------|\n");
 	printf("INT_MAX (Maximum value of a int): %d\n", INT_MAX);
 	printf("INT_MIN (Minimum value of a int): %d\n", INT_MIN);
-	printf("UINT_MAX (Maximum value of a unsigned int): %ud\n", UINT_MAX);
+	printf("UINT_MAX (Maximum value of a unsigned int): %u\n", UINT_MAX);
 	printf("LONG_MAX (Maximum value of a long int): %ld\n", LONG_MAX);
 	printf("LONG_MIN (Minimum value of a long int): %ld\n", LONG_MIN);
 	printf("ULONG_MAX (Maximum value of a unsigned long int): %lu\n", ULONG_MAX);
