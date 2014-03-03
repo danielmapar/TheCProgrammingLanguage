@@ -1,23 +1,32 @@
 /*
  ============================================================================
- Name        : Pow.c
+ Name        : 2.3-Constants-4.c
  Author      : Daniel Marchena Parreira
  Email       : danielmapar@gmail.com
- Date        : 12/12/2013
+ Date        : 18/12/2013
  Version     : 0.1
  Copyright   : GNU General Public License Version 2
- Description : n to the power of x program
+ Description : Alternative to strlen standard function
  ============================================================================
  */
 
 #include <stdio.h>
-#include <math.h>
 
-int main() {
-	const double a=2, b=1024;
-	double c;
+int strlen2(char s[]);
 
-	c = pow(a,b);
-	printf("%f^%f=%f\n", a,b,c);
+int main(void)
+{
+	printf("%d\n", strlen2("Daniel"));
 	return 0;
 }
+
+int strlen2(char s[])
+{
+	int i;
+
+	while(s[i] != '\0')
+		++i;
+	return i;
+}
+
+

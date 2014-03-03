@@ -1,23 +1,23 @@
 /*
  ============================================================================
- Name        : Pow.c
+ Name        : 2.8-IncrementAndDecrementOperators-1.c
  Author      : Daniel Marchena Parreira
  Email       : danielmapar@gmail.com
- Date        : 12/12/2013
+ Date        : 26/12/2013
  Version     : 0.1
  Copyright   : GNU General Public License Version 2
- Description : n to the power of x program
+ Description : Increment and Decrement Operator test.
  ============================================================================
  */
 
 #include <stdio.h>
-#include <math.h>
 
-int main() {
-	const double a=2, b=1024;
-	double c;
-
-	c = pow(a,b);
-	printf("%f^%f=%f\n", a,b,c);
+int main(void)
+{
+	int num = 10;
+	printf("%d", num++);
+	num = 10;
+	printf("%d",++num);
 	return 0;
+
 }

@@ -1,6 +1,6 @@
 /*
  ============================================================================
- Name        : 1.10-ExternalVariablesAndScope.c
+ Name        : 1.10-ExternalVariablesAndScope-1.c
  Author      : Daniel Marchena Parreira
  Email       : danielmapar@gmail.com
  Date        : 06/12/2013

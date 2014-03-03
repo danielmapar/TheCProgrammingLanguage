@@ -1,23 +1,23 @@
 /*
  ============================================================================
- Name        : Pow.c
+ Name        : 2.4-Declarations-2.c
  Author      : Daniel Marchena Parreira
  Email       : danielmapar@gmail.com
- Date        : 12/12/2013
+ Date        : 18/12/2013
  Version     : 0.1
  Copyright   : GNU General Public License Version 2
- Description : n to the power of x program
+ Description : A program that uses the const qualifier.
  ============================================================================
  */
 
 #include <stdio.h>
-#include <math.h>
 
-int main() {
-	const double a=2, b=1024;
-	double c;
+int main(void)
+{
+	const double e = 2.71828182845905;
+	const char msg[] = "warning: ";
 
-	c = pow(a,b);
-	printf("%f^%f=%f\n", a,b,c);
+	printf("%s%.15f\n", msg, e);
+
 	return 0;
 }
