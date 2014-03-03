@@ -14,7 +14,8 @@
 #include <math.h>
 
 int main() {
-	double a=2, b=1024, c;
+	const double a=2, b=1024;
+	double c;
 
 	c = pow(a,b);
 	printf("%f^%f=%f\n", a,b,c);

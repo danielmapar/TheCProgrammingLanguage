@@ -6,7 +6,7 @@
  Date        : 26/12/2013
  Version     : 0.1
  Copyright   : GNU General Public License Version 2
- Description : Increment and Decrement Operator test
+ Description : Increment and Decrement Operator test.
  ============================================================================
  */
 
@@ -18,5 +18,6 @@ int main(void)
 	printf("%d", num++);
 	num = 10;
 	printf("%d",++num);
+	return 0;
 
 }
