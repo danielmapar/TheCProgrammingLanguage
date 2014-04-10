@@ -21,9 +21,11 @@ int main(void)
 	char esc = '\\';
 	int i = 0;
 	int limit = MAXLINE+1;
-	float eps = 1.0e-5; /* exponential */
+	float eps = 1e-2; /* exponential */
+	float eps2 = 9e-1; /* exponential */
 
-	printf("Float: %f\n", eps);
+	printf("Float1: %f --- Float2: %.1f\n", eps, eps2);
+	/* exponential number -- ex: 1e-2 = 0.01 and 9e-1 = 0.9 */
 
 
 	return 0;

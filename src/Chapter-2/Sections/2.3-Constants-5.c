@@ -18,6 +18,11 @@ int main(void)
 		          JUL, AUG, SEP, OCT, NOV, DEC };
 				   /* FEB = 2, MAR = 3, etc.. */
 
+
+	/* Wont compile, because enum must receive a integer constant, not a string
+		enum string { NAME = "DANIEL" };
+	 */
+
 	/*
 	 * Names in different enumerations must be distinct.
 	 * Values need not be distinct in the same enumeration.
