@@ -14,7 +14,11 @@
 
 int main(void)
 {
-	char x = '1';
-	printf("%c", x);
+	int teste = 1;
+	char x = 1;
+
+	teste = ++x;
+
+	printf("%d", teste);
 	return 0;
 }
