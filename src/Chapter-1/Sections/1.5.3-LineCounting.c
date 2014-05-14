@@ -1,6 +1,6 @@
 /*
  ============================================================================
- Name        : 1.5.3-LineCounting-1.c
+ Name        : 1.5.3-LineCounting.c
  Author      : Daniel Marchena Parreira
  Email       : danielmapar@gmail.com
  Date        : 03/12/2013

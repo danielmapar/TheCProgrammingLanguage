@@ -1,27 +1,26 @@
 /*
  ============================================================================
- Name        : 1.3-TheForStatement-1.c
+ Name        : 1.5-CharacterInputAndOutput.c
  Author      : Daniel Marchena Parreira
  Email       : danielmapar@gmail.com
  Date        : 13/11/2013
  Version     : 0.1
  Copyright   : GNU General Public License Version 2
- Description : There are plenty of different ways to write a program for a
- 	 	 	   particular task. Let's try a variation on the temperature
- 	 	 	   converter.
+ Description : getchar() and putchar() example
  ============================================================================
  */
 
 #include <stdio.h>
 
-/* print Fahrenheit-Celsius table */
-
 int main(void)
 {
-	int fahr;
+	int character;
 
-	for(fahr = 0; fahr <= 300; fahr = fahr + 20)
-		printf("%3d %6.1f\n", fahr, (5.0/9.0)*(fahr-32));
+	character = getchar(); /* get first character typed on the terminal */
+	putchar(character); /* prints the first character typed on the terminal */
+
+	getchar(); /* get the escape sequence \n*/
+	getchar(); /* wait input to finish the program*/
 
 	return 0;
 }

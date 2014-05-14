@@ -1,6 +1,6 @@
 /*
  ============================================================================
- Name        : 1.8-ArgumentsCallByValue-1.c
+ Name        : 1.8-ArgumentsCallByValue.c
  Author      : Daniel Marchena Parreira
  Email       : danielmapar@gmail.com
  Date        : 05/12/2013

@@ -1,6 +1,6 @@
 /*
  ============================================================================
- Name        : 1.7-Functions-1.c
+ Name        : 1.7-Functions.c
  Author      : Daniel Marchena Parreira
  Email       : danielmapar@gmail.com
  Date        : 04/12/2013

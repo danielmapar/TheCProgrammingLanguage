@@ -1,6 +1,6 @@
 /*
  ============================================================================
- Name        : 1.4-SymbolicConstants-1.c
+ Name        : 1.4-SymbolicConstants.c
  Author      : Daniel Marchena Parreira
  Email       : danielmapar@gmail.com
  Date        : 13/11/2013

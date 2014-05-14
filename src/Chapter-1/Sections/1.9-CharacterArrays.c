@@ -1,6 +1,6 @@
 /*
  ============================================================================
- Name        : 1.9-CharacterArrays-1.c
+ Name        : 1.9-CharacterArrays.c
  Author      : Daniel Marchena Parreira
  Email       : danielmapar@gmail.com
  Date        : 05/12/2013

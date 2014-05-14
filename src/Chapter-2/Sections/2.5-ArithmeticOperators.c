@@ -1,6 +1,6 @@
 /*
  ============================================================================
- Name        : 2.5-ArithmeticOperators-1.c
+ Name        : 2.5-ArithmeticOperators.c
  Author      : Daniel Marchena Parreira
  Email       : danielmapar@gmail.com
  Date        : 18/12/2013

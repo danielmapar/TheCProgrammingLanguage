@@ -1,6 +1,6 @@
 /*
  ============================================================================
- Name        : 1.5.4-WordCounting-1.c
+ Name        : 1.5.4-WordCounting.c
  Author      : Daniel Marchena Parreira
  Email       : danielmapar@gmail.com
  Date        : 04/12/2013
