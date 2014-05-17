@@ -1,15 +1,18 @@
 /*
  ============================================================================
- Name        : 3.6-Loops-Do-While.c
+ Name        : Exercise-3-4.c
  Author      : Daniel Marchena Parreira
  Email       : danielmapar@gmail.com
- Date        : 14/05/2014
+ Date        : 16/05/2014
  Version     : 0.1
  Copyright   : GNU General Public License Version 2
- Description : itoa:  convert n to characters in s
+ Description : In a two's complement number representation, our version of
+               itoa does not handle the largest negative number, that is, the
+               value of n equal to -(2wordsize-1). Explain why not. Modify it
+               to print that value correctly, regardless of the machine on
+               which it runs.
  ============================================================================
  */
-
 #include <stdio.h>
 
 void itoa(int n, char s[]);
@@ -23,23 +26,19 @@ int main(void)
 	return 0;
 }
 
-/* itoa: convert n to characters in s */
 void itoa(int n, char s[])
 {
-	int i, sign;
+    int i;
+    int sign = (n < 0) ? -1 : 1;
 
-	if((sign = n) < 0) /* record sign */
-		n = -n; /* make n positive */
-
-	i = 0;
-	do{ /* generate digits in reverse order */
-		s[i++] = n % 10 + '0'; /* get next digit */
-	}while((n /= 10) > 0);
-
-	if(sign < 0)
-		s[i++] = '-';
-	s[i] = '\0';
-	reverse(s);
+    i = 0;
+    do {
+        s[i++] = sign * (n % 10) + '0';
+    } while ((n /= 10) != 0);
+    if (sign < 0)
+        s[i++] = '-';
+    s[i] = '\0';
+    reverse(s);
 }
 
 void reverse(char s[])
