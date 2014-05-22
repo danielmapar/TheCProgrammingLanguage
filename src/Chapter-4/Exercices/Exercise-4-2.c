@@ -16,12 +16,18 @@
 #include <ctype.h>
 #include <string.h>
 
+#define SIZE 100
+#define TRUE 1
+#define FALSE 0
+
 double atof(char s[]);
+void notation(char s[]);
 
 int main(void)
 {
+	char s[SIZE] = "1231.2e-6";
 
-	printf("%f\n", atof("12.312e-1"));
+	printf("%g\n", atof(s));
 	//printf("%f", 123.45e-1); // 123,45 --> 12,345 comma left move
 	return 0;
 }
@@ -29,38 +35,10 @@ int main(void)
 /* atof: convert string s to double */
 double atof(char s[])
 {
-	char s2[100];
 	double val, power;
-	int i,j, point, sign;
-	for (i = 0; isspace(s[i]); i++) /* skip white space */
-		;
+	int i, sign;
 
-	if((s[strlen(s)-3] == 'e' || s[strlen(s)-3] == 'E') &&
-	    s[strlen(s)-1] > 0)
-	{
-		for (j = 0; s[j] != '.'; j++)
-			;
-		point = j -  (s[strlen(s)-1] - '0');
-		if(point < 0)
-			for(j = 0; point < 0; j++, point++)
-				s2[j] = '0';
-
-		for (j = 0, i = 0; (s[i] != 'e' && s[i] != 'E') ; j++, i++)
-		{
-			if(i == point)
-				s2[j] = '.';
-			else if(isdigit(s[j]))
-				s2[j] = s[i];
-		}
-		s2[j] = '\0';
-
-		for(j = 0; s[j] != '\0'; j++)
-			s[j] = ' ';
-		s[j] = ' ';
-		for(j = 0; s2[j] != '\0'; j++)
-			s[j] = s2[j];
-		s[j] = '\0';
-	}
+	notation(s);
 
 	for (i = 0; isspace(s[i]); i++) /* skip white space */
 		;
@@ -77,4 +55,55 @@ double atof(char s[])
 		power *= 10;
 	}
 	return sign * val / power;
+}
+
+void notation(char s[])
+{
+	int i, j, gap;
+	char zero = FALSE;
+	char x[SIZE];
+
+	if((s[strlen(s)-3] == 'e' || s[strlen(s)-3] == 'E') &&
+		(s[strlen(s)-1] - '0') > 0)
+	{
+		for(i = 0; s[i] != '.' && s[i] != '\0'; i++)
+			;
+		gap = i - (s[strlen(s)-1] - '0');
+
+		for(j = 0; gap <= 0; j++, gap++)
+		{
+			x[j] = '0';
+			if(j == 0)
+			{
+				x[++j] = '.';
+				zero = TRUE;
+			}
+		}
+
+		for(i = 0; i < strlen(s)-3; i++)
+		{
+			if(isdigit(s[i]))
+			{
+				if(gap == i && zero == FALSE)
+				{
+					x[j] = '.';
+					x[++j] = s[i];
+				}
+				else
+					x[j] = s[i];
+				j++;
+			}
+		}
+		x[j] = '\0';
+
+		for(i = 0; s[i] != '\0'; i++)
+			s[i] = ' ';
+		s[i] = ' ';
+
+		for(i = 0; x[i] != '\0'; i++)
+			s[i] = x[i];
+		s[i] = '\0';
+	}
+	else
+		s[strlen(s)-3] = '\0';
 }
