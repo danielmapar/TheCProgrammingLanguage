@@ -16,7 +16,7 @@ static int justhere(int local);
 
 int fun(void)
 {
-	static int local = 1; // declared once, used staticly in every call of the function
+	static int local = 1; // declared once, used statically in every call of the function
 
 	justhere(local);
 	++local;
