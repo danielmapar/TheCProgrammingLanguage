@@ -55,8 +55,8 @@ void strcpy4(char *s, char *t)
 /* strcpy:  copy t to s; pointer version 3 */
 void strcpy5(char *s, char *t)
 {
-       while (*s++ = *t++)
-           ;
+       //while (*s++ = *t++)
+           //;
 }
 
 /* strcmp1: return <0 if s < t, 0 if s==t, >0 if s > t */
@@ -69,6 +69,7 @@ int strcmp1(char *s, char *t)
 			return 0;
 		return s[i] - t[i];
 	}
+	return 0;
 }
 
 /* strcmp2: return <0 if s < t, 0 if s==t, >0 if s > t */
