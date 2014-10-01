@@ -6,12 +6,12 @@
  Date        : 25/07/2014
  Version     : 0.1
  Copyright   : GNU General Public License Version 2
- Description : 
+ Description :
  ============================================================================
  */
 
 #include <stdio.h>
-
+// int (*pointer)[13];
 // function prototype
 int subtract(int x, int y);
 
